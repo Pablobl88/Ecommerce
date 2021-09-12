@@ -1,6 +1,16 @@
 // Envío de formulario
 
-const capturaDeDatos = () => {
+$('body').append(`<form>
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="text" id="apellido" placeholder="Apellido" required>
+                    <input type="email" id="mail" placeholder="E-mail" required>    
+                    <input type="phone" id="telefono" placeholder="Ingrese N° de teléfono con el código de área sin el 0" required>
+                    <input type="text" id="direccion" placeholder="Dirección de envío" required>
+                    <textarea id="mensaje" placeholder="Aclaraciones para la entrega"></textarea>
+                    <button onclick="capturaDeDatos()">PAGAR COMPRA</button> 
+                    </form>`) 
+
+ const capturaDeDatos = () => {
     let nombre = document.getElementById("nombre").value
     let apellido = document.getElementById("apellido").value
     let mail = document.getElementById("mail").value
@@ -21,7 +31,9 @@ const capturaDeDatos = () => {
     } else {
         console.log("Complete correctamente los datos")
     }
-}    
+} 
+
+  
 
 
         
