@@ -1,11 +1,11 @@
-const modelsA = new _Models ("Anime", "DRAGON BALL", "Goku", "15cm", 2500 , "Pintado a mano", "/media/goku.jpg");
-const modelsB = new _Models ("Anime", "NARUTO", "Naruto", "15cm", 2500 ,  "Pintado a mano", "/media/naruto.jpg");
-const modelsC = new _Models ("Superheroes", "BATMAN", "Batman", "15cm", 2500 ,  "Pintado a mano", "/media/batman.jpg");
-const modelsD = new _Models ("Películas", "CHUCKY", "Chucky", "12cm", 1600 ,  "Pintado a mano", "/media/chuky.jpg");
-const modelsE = new _Models ("Videojuegos", "AMONG US", "Player Rojo", "8cm", 600 ,  "Rojo - Detalles Pintados", "/media/amongUsRed.jpg");
-const modelsF = new _Models ("Videojuegos", "AMONG US", "Player Blanco", "8cm", 600 ,  "Blanco - Detalles pintados", "/media/amongUsWhite.jpg");
-const modelsG = new _Models ("Videojuegos", "POKEMON", "Pikachu", "10cm", 900 ,  "Amarillo - Detalles pintados", "/media/pikachu.jpg");
-const modelsH = new _Models ("Varios", "AUTOS LOCOS", "El Super Perrari", "12cm", 2800 ,  "Pintado a mano", "/media/autosLocos1.jpg");
+const modelsA = new _Models ("Anime", "DRAGON BALL", "Goku", "15cm", 2500 , "Pintado a mano", "https://i.ibb.co/vDzvgp4/goku.jpg");
+const modelsB = new _Models ("Anime", "NARUTO", "Naruto", "15cm", 2500 ,  "Pintado a mano", "https://i.ibb.co/pR6NLKy/naruto.jpg");
+const modelsC = new _Models ("Superheroes", "BATMAN", "Batman", "15cm", 2500 ,  "Pintado a mano", "https://i.ibb.co/GMmxPjJ/batman.jpg");
+const modelsD = new _Models ("Películas", "CHUCKY", "Chucky", "12cm", 1600 ,  "Pintado a mano", "https://i.ibb.co/C6FJsbk/chuky.jpg");
+const modelsE = new _Models ("Videojuegos", "AMONG US", "Player Rojo", "8cm", 600 ,  "Rojo - Detalles Pintados", "https://i.ibb.co/4TYPh7b/among-Us-Red.jpg");
+const modelsF = new _Models ("Videojuegos", "AMONG US", "Player Blanco", "8cm", 600 ,  "Blanco - Detalles pintados", "https://i.ibb.co/xmn5GN1/among-Us-White.jpg");
+const modelsG = new _Models ("Videojuegos", "POKEMON", "Pikachu", "10cm", 900 ,  "Amarillo - Detalles pintados", "https://i.ibb.co/k4pkfS8/pikachu.jpg");
+const modelsH = new _Models ("Varios", "AUTOS LOCOS", "El Super Perrari", "12cm", 2800 ,  "Pintado a mano", "https://i.ibb.co/CMg0Vgt/autos-Locos1.jpg");
 
 const figures = [modelsA, modelsB, modelsC, modelsD, modelsE, modelsF, modelsG, modelsH];
 const carrito = [];
@@ -16,7 +16,7 @@ figures.forEach((figuras) => {
     acumulador += `<div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="${figuras.img}" width="100"/>
+                            <img class="card-img-top" id="animacionImg" src="${figuras.img}" style="width:50%"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -46,6 +46,14 @@ figures.forEach((figuras) => {
 
 /**Ubicación cards*/
 document.getElementById("productos").innerHTML = acumulador;
+
+// Animación de la imágenes
+$("#animacionImg").hover(function() {
+    $("#img").animate({
+        transform: scale(1.2);  
+    })
+})
+
 
 // Función para agregar al carrito
 
