@@ -16,7 +16,7 @@ figures.forEach((figuras) => {
     acumulador += `<div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" id="animacionImg" src="${figuras.img}" style="width:50%"/>
+                            <img class="card-img-top" src="${figuras.img}" style="width:50%"/>
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -47,12 +47,15 @@ figures.forEach((figuras) => {
 /**Ubicación cards*/
 document.getElementById("productos").innerHTML = acumulador;
 
+
 // Animación de la imágenes
-$("#animacionImg").hover(function() {
-    $("#img").animate({
-        transform: scale(1.2);  
-    })
-})
+$('img').hover(
+function(){
+  $(this).addClass('animacionImg');  
+},
+function(){
+  $(this).removeClass('animacionImg');
+});
 
 
 // Función para agregar al carrito
