@@ -1,3 +1,7 @@
+.centrado {
+  margin-left: 55px;
+}
+
 .animacionImg {
   transform: scale(2);
 }
