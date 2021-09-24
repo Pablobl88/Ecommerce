@@ -80,7 +80,7 @@ const carritoConProductos = JSON.parse(localStorage.getItem('productosLS'));
 let modalCarritoConProd = ``;
 carritoConProductos.forEach((figuras, index) =>{
     modalCarritoConProd += `<td>
-        <img src="${figuras.imagen}" width=100>
+        <img src="${figuras.img}" width=100>
         </td>
         <td>${figuras.personaje}</td>
         <td>${figuras.precio}</td>`
